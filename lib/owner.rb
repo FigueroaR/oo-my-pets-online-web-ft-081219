@@ -1,5 +1,7 @@
+require 'pry'
 class Owner
   attr_reader :name, :species
+  
   @@all= []
   def initialize(name)
     @name = name 
@@ -33,12 +35,6 @@ class Owner
     Cat.new(name, self)
   end 
   
-  def feed_cats
-    if @cats = "feed_cats"
-      cats.mood ="happy"
-    end
-  end 
-  
   def dogs
     @dog
   end 
@@ -47,5 +43,17 @@ class Owner
     Dog.new(name, self)
   end
   
+  def walk_dogs
+    dog = Dog.new(name, self)
+    dog.mood = "happy" 
+    dog
+    #binding.pry
+  end 
+  
+  def feed_cats
+    if @cats = "feed_cats"
+      cats.mood ="happy"
+    end
+  end 
 
 end
